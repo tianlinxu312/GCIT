@@ -206,8 +206,8 @@ def GCIT(x, y, z, statistic = "rdc", lamda = 10, normalize=True, verbose=False, 
     WD_loss = tf.reduce_mean(WD_fake) - tf.reduce_mean(WD_real) + grad_pen
 
     # 2. MINE Loss
-    M_loss = lamda * (tf.reduce_sum(tf.reduce_mean(M_out, axis=0) - \
-                                    tf.math.log(tf.reduce_mean(Exp_M_out, axis=0))))
+    M_loss = tf.reduce_sum(tf.reduce_mean(M_out, axis=0) - \
+                                    tf.math.log(tf.reduce_mean(Exp_M_out, axis=0)))
 
     # 3. Generator loss, aim make WD_fake high
     G_loss = -tf.reduce_mean(WD_fake) + lamda * M_loss
