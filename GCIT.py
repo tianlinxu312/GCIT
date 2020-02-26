@@ -22,12 +22,6 @@ Hyper-parameters (=Default values)
 '''
 
 def GCIT(x, y, z, statistic = "rdc", lamda = 10, normalize=True, verbose=False, n_iter=1000,debug=False):
-
-    if normalize:
-        z = (z - z.min()) / (z.max() - z.min())
-        x = (x - x.min()) / (x.max() - x.min())
-        y = (y - y.min()) / (y.max() - y.min())
-
     # %% Parameters
     # 1. # of samples
     n = len(z[:, 0])
