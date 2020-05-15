@@ -57,7 +57,7 @@ def generate_samples_random(size=1000, sType='CI', dx=1, dy=1, dz=20, nstd=1, fi
             f1 = cube
         elif I1 == 4:
             f1 = np.tanh
-        elif I2 == 5:
+        elif I1 == 5:
             f1 = negexp
         else:
             f1 = np.cos
